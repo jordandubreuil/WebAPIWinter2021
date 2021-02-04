@@ -47,8 +47,8 @@ function mouseUp(e){
 }
 
 function mouseMove(e){
-    var x = -400 + e.clientX - 8 // need to fix player id and positions
-    var y = -300 + e.clientY - 8
+    var x = -400 + e.clientX - 8 // do not need to fix player id and positions
+    var y = -300 + e.clientY - 96 // need to offset for header because 
     var angle = Math.atan2(y,x)/Math.PI*180
     socket.emit('keypress', { inputId: 'mouseAngle', state: angle })
 }
